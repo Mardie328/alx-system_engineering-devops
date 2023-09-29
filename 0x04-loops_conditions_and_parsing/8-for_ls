@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This script is displaying the content of the current directory in a list format
+
+for file in *; do
+    # Check if the file is not hidden and contains a dash "-"
+    if [[ ! "$file" == .* && "$file" == *-* ]]; then
+        # Extract the part of the name after the first dash "-"
+        name_after_dash="${file#*-}"
+        echo "$name_after_dash"
+    fi
+done
